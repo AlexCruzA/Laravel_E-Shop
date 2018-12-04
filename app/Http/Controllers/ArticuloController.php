@@ -14,8 +14,8 @@ class ArticuloController extends Controller
      */
     public function index()
     {
-        $articulos = Articulo::latest()->pagonate(5);
-        return vied('articulos.index', compact('articulos'))->with('i',(request()->input('page', 1) - 1) *5);
+        $articulos = Articulo::latest()->paginate(5);
+        return view('articulos.index', compact('articulos'))->with('i',(request()->input('page', 1) - 1) *5);
     }
 
     /**
