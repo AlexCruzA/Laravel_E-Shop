@@ -1,3 +1,4 @@
+
 @extends('articulos.master')
 
 @section('content')
