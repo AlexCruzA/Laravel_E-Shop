@@ -4,7 +4,7 @@
   <div class="row">
     <div class="col-lg-12">
       <div class="pull-left">
-        <h3>Show Categorias </h3> <a class="btn btn-xs btn-primary" href="{{ route('Categorias.index') }}">Back</a>
+        <h3>Show Categorias </h3> <a class="btn btn-xs btn-primary" href="{{ route('categorias.index') }}">Back</a>
       </div>
     </div>
   </div>
