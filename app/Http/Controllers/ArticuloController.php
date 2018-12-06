@@ -25,7 +25,7 @@ class ArticuloController extends Controller
      */
     public function create()
     {
-        //
+        return view('articulos.create');
     }
 
     /**
@@ -36,7 +36,15 @@ class ArticuloController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        request()->validate([
+          'descripcion' => 'required',
+          'id_categoria' => 'required',
+          'imagen' => 'required',
+          'nombre' => 'required',
+          'precio' => 'required',
+        ]);
+        Articulo::create($request->all());
+        return redirect()->route('articulos.index')->with('success','Articulo created successfully');
     }
 
     /**
@@ -47,7 +55,8 @@ class ArticuloController extends Controller
      */
     public function show($id)
     {
-        //
+        $articulo = Articulo::find($id);
+        return view('articulos.show', compact('articulo'));
     }
 
     /**
@@ -58,7 +67,8 @@ class ArticuloController extends Controller
      */
     public function edit($id)
     {
-        //
+        $articulo = Articulo::find($id);
+        return view('articulos.edit', compact('articulo'));
     }
 
     /**
@@ -70,7 +80,15 @@ class ArticuloController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        request()->validate([
+            'descripcion' => 'required',
+            'id_categoria' => 'required',
+            'imagen' => 'required',
+            'nombre' => 'required',
+            'precio' => 'required',
+      ]);
+      Articulo::find($id)->update($request->all());
+      return redirect()->route('articulos.index')->with('success','Articulo updated successfully');
     }
 
     /**
@@ -81,6 +99,7 @@ class ArticuloController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Articulo::find($id)->delete();
+        return redirect()->route('articulos.index')->with('success','Articulo deleted successfully');
     }
 }
