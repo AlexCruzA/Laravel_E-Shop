@@ -13,10 +13,12 @@
 
 Route::get('/', function () {
     return view('welcome');
+    //return ewdirect()->route('personas.create');
 });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('articulos', 'ArticuloController');
+Route::resource('categorias', 'CategoriaController');
 
