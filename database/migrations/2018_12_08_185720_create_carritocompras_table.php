@@ -15,6 +15,11 @@ class CreateCarritocomprasTable extends Migration
     {
         Schema::create('carritocompras', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('descripcion');
+            $table->string('id_categoria');
+            $table->string('imagen');
+            $table->string('nombre');
+            $table->double('precio');
             $table->timestamps();
         });
     }
