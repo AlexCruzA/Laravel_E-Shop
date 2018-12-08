@@ -40,6 +40,7 @@
         <td>
           <a class="btn btn-xs btn-info" href="{{ route('articulos.show', $articulo->id) }}">Show</a>
           <a class="btn btn-xs btn-primary" href="{{ route('articulos.edit', $articulo->id) }}">Edit</a>
+          <a type="button" class="btn btn-success" href="{{ route('articulos.edit', $articulo->id) }}">Buy</a>
 
           {!! Form::open(['method' => 'DELETE', 'route'=>['articulos.destroy', $articulo->id], 'style'=> 'display:inline']) !!}
           {!! Form::submit('Delete',['class'=> 'btn btn-xs btn-danger']) !!}

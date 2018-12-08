@@ -18,11 +18,11 @@
     <![endif]-->
   </head>
   <body>
+    @include('layouts.app')
 
-    <div class="container">
-      @include('layouts.app')
+    <!--<div class="container">
       @yield('content')
-    </div>
+    </div>-->
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
