@@ -42,7 +42,15 @@
         <td>
           <?php $sum = (int) "$carritocompra->precio" ?>
           <?php $sum *= $carritocompra->cantidad ?>
-          <a class="btn btn-success" href="{{ route('carritocompras.edit', $carritocompra->id) }}"> Pay = {{ $sum }} </a>
+
+           <div class="alert alert-danger">
+            <center><strong>Total: </strong> ${{ $sum }}</center>
+          </div>
+
+          {!! Form::open(['method' => 'DELETE', 'route'=>['carritocompras.destroy', $carritocompra->id], 'style'=> 'display:inline']) !!}
+          {!! Form::submit('Pay',['class'=> 'btn btn-success']) !!}
+          {!! Form::close() !!}
+
           {!! Form::open(['method' => 'DELETE', 'route'=>['carritocompras.destroy', $carritocompra->id], 'style'=> 'display:inline']) !!}
           {!! Form::submit('Delete',['class'=> 'btn btn-xs btn-danger']) !!}
           {!! Form::close() !!}
