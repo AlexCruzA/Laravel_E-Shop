@@ -2,16 +2,10 @@
 @section('content')
   <div class="row">
     <div class="col-lg-12">
-      <h3>Simple laravel CRUD with resource controller</h3>
+      <h3>Articulos</h3>
     </div>
   </div>
-  <div class="row">
-    <div class="col-sm-12">
-      <div class="pull-right">
-        <a class="btn btn-xs btn-success" href="{{ route('articulos.create') }}">Create New Articulo</a>
-      </div>
-    </div>
-  </div>
+ 
   @if ($message = Session::get('success'))
     <div class="alert alert-success">
       <p>{{ $message }}</p>
@@ -19,14 +13,14 @@
   @endif
 
   <table class="table table-bordered">
-    <tr>
+    <tr align="center">
       <th>No.</th>
       <th>Descripcion</th>
       <th>Id Categoria</th>
       <th>Imagen</th>
       <th>Nombre</th>
       <th>Precio</th>
-      <th width="300px">Actions</th>
+      <th width="300px">Details</th>
     </tr>
 
     @foreach ($articulos as $articulo)
@@ -37,13 +31,16 @@
         <td>{{ $articulo->imagen }}</td>
         <td>{{ $articulo->nombre }}</td>
         <td>{{ $articulo->precio }}</td>
-        <td>
-          <a class="btn btn-success" href="{{ route('articulos.show', $articulo->id) }}">Show</a>
-          <a class="btn btn-xs btn-primary" href="{{ route('articulos.edit', $articulo->id) }}">Edit</a>
+        <td align="center">
+          <a class="btn btn-success" href="{{ route('articulos.show', $articulo->id) }}">Details</a>
 
-          {!! Form::open(['method' => 'DELETE', 'route'=>['articulos.destroy', $articulo->id], 'style'=> 'display:inline']) !!}
-          {!! Form::submit('Delete',['class'=> 'btn btn-xs btn-danger']) !!}
-          {!! Form::close() !!}        
+          @if( Auth::user()->rol == 'Administrador' )
+            <a class="btn btn-xs btn-primary" href="{{ route('articulos.edit', $articulo->id) }}">Edit</a>
+            {!! Form::open(['method' => 'DELETE', 'route'=>['articulos.destroy', $articulo->id], 'style'=> 'display:inline']) !!}
+            {!! Form::submit('Delete',['class'=> 'btn btn-xs btn-danger']) !!}
+            {!! Form::close() !!}
+          @endif
+
         </td>
       </tr>
     @endforeach

@@ -4,7 +4,7 @@
 @section('content')
   <div class="row">
     <div class="col-lg-12">
-      <h3>Simple laravel CRUD with resource controller</h3>
+      <h3>Categorias</h3>
     </div>
   </div>
   <div class="row">
@@ -33,11 +33,13 @@
         <td>{{ $categoria->descripcion }}</td>
         <td>
           <a class="btn btn-xs btn-info" href="{{ route('categorias.show', $categoria->id) }}">Show</a>
-          <a class="btn btn-xs btn-primary" href="{{ route('categorias.edit', $categoria->id) }}">Edit</a>
 
-          {!! Form::open(['method' => 'DELETE', 'route'=>['categorias.destroy', $categoria->id], 'style'=> 'display:inline']) !!}
-          {!! Form::submit('Delete',['class'=> 'btn btn-xs btn-danger']) !!}
-          {!! Form::close() !!}
+          @if( Auth::user()->rol == 'Administrador' )
+            <a class="btn btn-xs btn-primary" href="{{ route('categorias.edit', $categoria->id) }}">Edit</a>
+            {!! Form::open(['method' => 'DELETE', 'route'=>['categorias.destroy', $categoria->id], 'style'=> 'display:inline']) !!}
+            {!! Form::submit('Delete',['class'=> 'btn btn-xs btn-danger']) !!}
+            {!! Form::close() !!}
+          @endif
         </td>
       </tr>
     @endforeach
