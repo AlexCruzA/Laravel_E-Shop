@@ -1,9 +1,9 @@
-@extends('articulos.master')
+@extends('carritocompras.master')
 @section('content')
   <div class="row">
     <div class="col-lg-12">
       <div class="pull-left">
-        <h3>Edit Articulo</h3>
+        <h3>Edit Carritocompra</h3>
       </div>
     </div>
   </div>
@@ -19,8 +19,8 @@
     </div>
   @endif
 
-  {!! Form::model($articulo, ['method'=>'PATCH','route'=>['articulos.update', $articulo->id]])!!}
-    @include('articulos.form')
+  {!! Form::model($carritocompra, ['method'=>'PATCH','route'=>['carritocompras.update', $carritocompra->id]])!!}
+    @include('carritocompras.form')
   {!! Form::close() !!}
 
 @endsection

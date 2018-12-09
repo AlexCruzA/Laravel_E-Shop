@@ -40,6 +40,7 @@
         <td>
           <a class="btn btn-xs btn-info" href="{{ route('carritocompras.show', $carritocompra->id) }}">Show</a>
           <a class="btn btn-xs btn-primary" href="{{ route('carritocompras.edit', $carritocompra->id) }}">Edit</a>
+          <a class="btn btn-xs btn-primary" href="{{ route('carritocompras.edit', $carritocompra->id) }}">Pay</a>
 
           {!! Form::open(['method' => 'DELETE', 'route'=>['carritocompras.destroy', $carritocompra->id], 'style'=> 'display:inline']) !!}
           {!! Form::submit('Delete',['class'=> 'btn btn-xs btn-danger']) !!}

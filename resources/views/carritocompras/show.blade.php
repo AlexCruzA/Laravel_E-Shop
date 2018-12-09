@@ -1,9 +1,9 @@
-@extends('articulos.master')
+@extends('carritocompras.master')
 @section('content')
   <div class="row">
     <div class="col-lg-12">
       <div class="pull-left">
-        <h3>Show Articulos </h3> <a class="btn btn-xs btn-primary" href="{{ route('articulos.index') }}">Back</a>
+        <h3>Show Carritocompras </h3> <a class="btn btn-xs btn-primary" href="{{ route('carritocompras.index') }}">Back</a>
       </div>
     </div>
   </div>
@@ -12,31 +12,31 @@
     <div class="col-xs-12">
       <div class="form-group">
         <strong>Descripcion : </strong>
-        {{ $articulo->descripcion }}
+        {{ $carritocompra->descripcion }}
       </div>
     </div>
     <div class="col-xs-12">
       <div class="form-group">
         <strong>Id Categoria : </strong>
-        {{ $articulo->id_categoria }}
+        {{ $carritocompra->id_categoria }}
       </div>
     </div>
     <div class="col-xs-12">
       <div class="form-group">
         <strong>Imagen : </strong>
-        {{ $articulo->imagen }}
+        {{ $carritocompra->imagen }}
       </div>
     </div>
     <div class="col-xs-12">
       <div class="form-group">
         <strong>Nombre : </strong>
-        {{ $articulo->nombre }}
+        {{ $carritocompra->nombre }}
       </div>
     </div>
     <div class="col-xs-12">
       <div class="form-group">
         <strong>Precio : </strong>
-        {{ $articulo->precio }}
+        {{ $carritocompra->precio }}
       </div>
     </div>
   </div>

@@ -22,5 +22,5 @@
   {!! Form::open(['route' => 'carritocompras.store', 'method' => 'POST']) !!}
     @include('carritocompras.form')
   {!! Form::close() !!}
-
+  
 @endsection
