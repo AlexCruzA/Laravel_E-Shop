@@ -7,38 +7,38 @@
       </div>
     </div>
   </div>
-
   <div class="row">
     <div class="col-xs-12">
       <div class="form-group">
         <strong>Descripcion : </strong>
-        {{ $articulo->descripcion }}
+        {!! Form::text('descripcion', $articulo->descripcion, ['placeholder'=>'Descripcion','class'=>'form-control']) !!}
       </div>
     </div>
     <div class="col-xs-12">
       <div class="form-group">
         <strong>Id Categoria : </strong>
-        {{ $articulo->id_categoria }}
+        {!! Form::text('id_categoria', $articulo->id_categoria, ['placeholder'=>'Id Categoria','class'=>'form-control']) !!}
       </div>
     </div>
     <div class="col-xs-12">
       <div class="form-group">
         <strong>Imagen : </strong>
-        {{ $articulo->imagen }}
+        {!! Form::text('imagen', $articulo->imagen, ['placeholder'=>'Imagen','class'=>'form-control']) !!}
       </div>
     </div>
     <div class="col-xs-12">
       <div class="form-group">
         <strong>Nombre : </strong>
-        {{ $articulo->nombre }}
+        {!! Form::text('nombre', $articulo->nombre, ['placeholder'=>'Nombre','class'=>'form-control']) !!}
       </div>
     </div>
     <div class="col-xs-12">
       <div class="form-group">
         <strong>Precio : </strong>
-        {{ $articulo->precio }}
+        {!! Form::text('precio', $articulo->precio, ['placeholder'=>'Precio','class'=>'form-control']) !!}
       </div>
     </div>
   </div>
-  
+  <button type="submit" class="btn btn-xs btn-primary" name="button">Submit</button>
+
 @endsection

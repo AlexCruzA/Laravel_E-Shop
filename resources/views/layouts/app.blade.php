@@ -36,19 +36,20 @@
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>Articulos </a>
-
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                 <a class="nav-link" href="{{ route('articulos.index') }}">Lista</a>
-                                 <a class="nav-link" href="{{ route('articulos.create') }}">Crear</a>
-                            </div>
-                            <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>Categorias </a>
-
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                 <a class="nav-link" href="{{ route('categorias.index') }}">Lista</a>
-                                 <a class="nav-link" href="{{ route('categorias.create') }}">Crear</a>
+                                <a class="nav-link" href="{{ route('articulos.index') }}">Lista</a>
+                                <a class="nav-link" href="{{ route('articulos.create') }}">Crear</a>
                             </div>
                         </li>
+                        <li class="nav-item dropdown">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>Categorias </a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a class="nav-link" href="{{ route('categorias.index') }}">Lista</a>
+                                <a class="nav-link" href="{{ route('categorias.create') }}">Crear</a>
+                            </div>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="{{ route('carritocompras.index') }}" role="button" aria-haspopup="true" aria-expanded="false" v-pre>Carrito </a>
                         </li>
                     </ul>
 
