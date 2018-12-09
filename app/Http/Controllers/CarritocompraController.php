@@ -43,6 +43,7 @@ class CarritocompraController extends Controller
           'imagen' => 'required',
           'nombre' => 'required',
           'precio' => 'required',
+          'cantidad' => 'required',
         ]);
         Carritocompra::create($request->all());
         return redirect()->route('carritocompras.index')->with('success','Carritocompra created successfully');
