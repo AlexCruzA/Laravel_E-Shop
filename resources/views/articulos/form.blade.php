@@ -1,3 +1,9 @@
+<?php
+  use App\Categoria;
+
+  $catDesc = Categoria::pluck('descripcion');
+?>
+
 <div class="row">
   <div class="col-xs-12">
     <div class="form-group">
@@ -7,8 +13,8 @@
   </div>
   <div class="col-xs-12">
     <div class="form-group">
-      <strong>Id Categoria : </strong>
-      {!! Form::text('id_categoria', null, ['placeholder'=>'Id Categoria','class'=>'form-control']) !!}
+      <strong>Categoria : </strong>
+      {{ Form::select('id_categoria', $catDesc, ['class'=>'form-control']) }}
     </div>
   </div>
   <div class="col-xs-12">
@@ -32,7 +38,7 @@
   <div class="col-xs-12">
     <a class="btn btn-xs btn-success" href="{{ route('articulos.index') }}">Back</a>
     @if( Auth::user()->rol == 'Administrador' )
-    <button type="submit" class="btn btn-xs btn-primary" name="button">Submit</button>
+      <button type="submit" class="btn btn-xs btn-primary" name="button">Submit</button>
     @endif
     @if( Auth::user()->rol == 'Comprador' )
       <div class="alert alert-danger">
