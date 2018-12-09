@@ -14,7 +14,7 @@
   <div class="col-xs-12">
     <div class="form-group">
       <strong>Imagen : </strong>
-      {!! Form::text('imagen', null, ['placeholder'=>'Imagen','class'=>'form-control']) !!}
+      {!! Form::file('imagen', null, ['placeholder'=>'Imagen','class'=>'form-control']) !!}
     </div>
   </div>
   <div class="col-xs-12">
@@ -31,6 +31,13 @@
   </div>
   <div class="col-xs-12">
     <a class="btn btn-xs btn-success" href="{{ route('articulos.index') }}">Back</a>
+    @if( Auth::user()->rol == 'Administrador' )
     <button type="submit" class="btn btn-xs btn-primary" name="button">Submit</button>
+    @endif
+    @if( Auth::user()->rol == 'Comprador' )
+      <div class="alert alert-danger">
+        <center><strong>Ups!</strong> No tienes acceso a esta función</center>
+      </div>
+    @endif
   </div>
 </div>

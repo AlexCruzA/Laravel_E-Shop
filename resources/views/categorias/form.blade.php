@@ -7,6 +7,14 @@
   </div>
   <div class="col-xs-12">
     <a class="btn btn-xs btn-success" href="{{ route('categorias.index') }}">Back</a>
-    <button type="submit" class="btn btn-xs btn-primary" name="button">Submit</button>
+    @if( Auth::user()->rol == 'Administrador' )
+      <button type="submit" class="btn btn-xs btn-primary" name="button">Submit</button>
+      @endif
+
+    @if( Auth::user()->rol == 'Comprador' )
+      <div class="alert alert-danger">
+        <center><strong>Ups!</strong> No tienes acceso a esta función</center>
+      </div>
+    @endif
   </div>
 </div>
