@@ -38,15 +38,12 @@
         <td>{{ $articulo->nombre }}</td>
         <td>{{ $articulo->precio }}</td>
         <td>
-          <a class="btn btn-xs btn-info" href="{{ route('articulos.show', $articulo->id) }}">Show</a>
+          <a class="btn btn-success" href="{{ route('articulos.show', $articulo->id) }}">Show</a>
           <a class="btn btn-xs btn-primary" href="{{ route('articulos.edit', $articulo->id) }}">Edit</a>
+
           {!! Form::open(['method' => 'DELETE', 'route'=>['articulos.destroy', $articulo->id], 'style'=> 'display:inline']) !!}
           {!! Form::submit('Delete',['class'=> 'btn btn-xs btn-danger']) !!}
-          {!! Form::close() !!}
-        
-          {!! Form::open(['method' => 'INSERT', 'route'=>['carritocompras.store', $articulo->descripcion, $articulo->id_categoria, $articulo->imagen, $articulo->nombre, $articulo->precio], 'style'=> 'display:inline']) !!}
-          {!! Form::submit('Buy',['class'=> 'btn btn-xs btn-danger']) !!}
-          {!! Form::close() !!}
+          {!! Form::close() !!}        
         </td>
       </tr>
     @endforeach

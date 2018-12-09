@@ -22,5 +22,4 @@
   {!! Form::model($articulo, ['method'=>'PATCH','route'=>['articulos.update', $articulo->id]])!!}
     @include('articulos.form')
   {!! Form::close() !!}
-
 @endsection

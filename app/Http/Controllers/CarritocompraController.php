@@ -34,15 +34,15 @@ class CarritocompraController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+    //$descripcion, $id_categoria, $imagen, $nombre, $precio
     public function store(Request $request)
     {
-        dd($request);
         request()->validate([
-          'descripcion' => $descripcion,
-          'id_categoria' => $id_categoria,
-          'imagen' => $imagen,
-          'nombre' => $nombre,
-          'precio' => $precio,
+          'descripcion' => 'required',
+          'id_categoria' => 'required',
+          'imagen' => 'required',
+          'nombre' => 'required',
+          'precio' => 'required',
         ]);
         Carritocompra::create($request->all());
         return redirect()->route('carritocompras.index')->with('success','Carritocompra created successfully');
