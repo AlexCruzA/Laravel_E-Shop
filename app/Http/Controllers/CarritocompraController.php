@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Carritocompras;
+use App\Carritocompra;
 
-class CarritocomprasController extends Controller
+class CarritocompraController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class CarritocomprasController extends Controller
      */
     public function index()
     {
-        $carritocompras = Carritocompras::latest()->paginate(5);
+        $carritocompras = Carritocompra::latest()->paginate(5);
         return view('carritocompras.index', compact('carritocompras'))->with('i',(request()->input('page', 1) - 1) *5);
     }
 
@@ -36,15 +36,16 @@ class CarritocomprasController extends Controller
      */
     public function store(Request $request)
     {
+        dd($request);
         request()->validate([
-          'descripcion' => 'required',
-          'id_categoria' => 'required',
-          'imagen' => 'required',
-          'nombre' => 'required',
-          'precio' => 'required',
+          'descripcion' => $descripcion,
+          'id_categoria' => $id_categoria,
+          'imagen' => $imagen,
+          'nombre' => $nombre,
+          'precio' => $precio,
         ]);
-        Carritocompras::create($request->all());
-        return redirect()->route('carritocompras.index')->with('success','Carritocompras created successfully');
+        Carritocompra::create($request->all());
+        return redirect()->route('carritocompras.index')->with('success','Carritocompra created successfully');
     }
 
     /**
@@ -55,8 +56,7 @@ class CarritocomprasController extends Controller
      */
     public function show($id)
     {
-        $carritocompras = Carritocompras::find($id);
-        return view('carritocompras.show', compact('carritocompras'));
+        //
     }
 
     /**
@@ -90,7 +90,7 @@ class CarritocomprasController extends Controller
      */
     public function destroy($id)
     {
-        Carritocompras::find($id)->delete();
-        return redirect()->route('carritocompras.index')->with('success','Carritocompras deleted successfully');
+        Carritocompra::find($id)->delete();
+        return redirect()->route('carritocompras.index')->with('success','Carritocompra deleted successfully');
     }
 }
