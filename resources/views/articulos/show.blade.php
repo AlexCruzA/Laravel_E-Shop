@@ -40,6 +40,12 @@
         {!! Form::text('precio', $articulo->precio, ['placeholder'=>'Precio','class'=>'form-control', 'readonly']) !!}
       </div>
     </div>
+    <div class="col-xs-1">
+      <div class="form-group">
+        <strong>Cantidad : </strong>
+        {!! Form::number('cantidad', $articulo->cantidad, ['placeholder'=>'Cantidad***','class'=>'form-control', 'min'=>'1', 'max'=>'100']) !!}
+      </div>
+    </div>
   </div>
   {!! Form::close() !!}
   <button type="submit" class="btn btn-success" name="button">Buy</button>
