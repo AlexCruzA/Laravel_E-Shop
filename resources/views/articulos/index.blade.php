@@ -16,7 +16,7 @@
     <tr align="center">
       <th>No.</th>
       <th>Descripcion</th>
-      <th>Id Categoria</th>
+      <th>Categoria</th>
       <th>Imagen</th>
       <th>Nombre</th>
       <th>Precio</th>

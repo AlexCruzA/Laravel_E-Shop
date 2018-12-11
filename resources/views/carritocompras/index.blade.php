@@ -5,13 +5,7 @@
       <h3>Carrito de compras</h3>
     </div>
   </div>
-  <div class="row">
-    <div class="col-sm-12">
-      <div class="pull-right">
-        <a class="btn btn-xs btn-success" href="{{ route('carritocompras.create') }}">Create New carritocompra</a>
-      </div>
-    </div>
-  </div>
+  
   @if ($message = Session::get('success'))
     <div class="alert alert-success">
       <p>{{ $message }}</p>

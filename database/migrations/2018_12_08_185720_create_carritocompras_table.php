@@ -20,7 +20,7 @@ class CreateCarritocomprasTable extends Migration
             $table->string('imagen');
             $table->string('nombre');
             $table->double('precio');
-            $table->int('cantidad');
+            $table->double('cantidad');
             $table->timestamps();
         });
     }
