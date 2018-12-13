@@ -59,7 +59,8 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = User::find($id);
+        return view('users.edit', compact('user'));
     }
 
     /**
@@ -71,7 +72,12 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        request()->validate([
+            'name' => 'required',
+            'email' => 'required',
+      ]);
+      User::find($id)->update($request->all());
+      return redirect()->route('users.index')->with('success','User updated successfully');
     }
 
     /**
