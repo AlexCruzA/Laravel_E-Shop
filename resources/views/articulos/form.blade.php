@@ -1,13 +1,10 @@
 <?php
   use App\Categoria;
 
-
   $list = Categoria::all();
  // $catDesc = Categoria::pluck('descripcion');
-
   // {{ Form::select('id_categoria', $catDesc, null, ['class'=>'form-control' , 'value'-])}}
 ?>
-
 <div class="row">
   <div class="col-xs-12">
     <div class="form-group">
@@ -16,9 +13,6 @@
     </div>
   </div>
   <div class="col-xs-12">
-  
-    
-
     <div class="form-group">
       <strong>Categoria : </strong>
       <select name="id_categoria">
@@ -26,7 +20,6 @@
           <option value="{{$category->descripcion}}">{{$category->descripcion}}</option>
         @endforeach
       </select>
-
     </div>
   </div>
   <div class="col-xs-12">
