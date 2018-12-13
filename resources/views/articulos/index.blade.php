@@ -28,7 +28,7 @@
         <td>{{ ++$i }}</td>
         <td>{{ $articulo->descripcion }}</td>
         <td>{{ $articulo->id_categoria }}</td>
-        <td>{{ $articulo->imagen }}</td>
+        <td> <center> <img src="{{URL::asset('/image/')}}/{{ $articulo->imagen  }}" alt="profile Pic" height="150" width="250"></center></td>
         <td>{{ $articulo->nombre }}</td>
         <td>{{ $articulo->precio }}</td>
         <td align="center">
