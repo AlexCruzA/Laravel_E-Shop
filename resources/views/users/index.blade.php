@@ -18,6 +18,7 @@
       <th>Nombre</th>
       <th>Email</th>
       <th>Rol</th>
+      <th>Actions</th>
     </tr>
 
     @foreach ($users as $user)
@@ -26,6 +27,17 @@
         <td>{{ $user->name }}</td>
         <td>{{ $user->email }}</td>
         <td>{{ $user->rol }}</td>
+        <td align="center">
+          <a class="btn btn-success" href="{{ route('users.show', $user->id) }}">Details</a>
+
+          @if( Auth::user()->rol == 'Administrador' )
+            <a class="btn btn-xs btn-primary" href="{{ route('users.edit', $user->id) }}">Edit</a>
+            {!! Form::open(['method' => 'DELETE', 'route'=>['users.destroy', $user->id], 'style'=> 'display:inline']) !!}
+            {!! Form::submit('Delete',['class'=> 'btn btn-xs btn-danger']) !!}
+            {!! Form::close() !!}
+          @endif
+
+        </td>
       </tr>
     @endforeach
   </table>
