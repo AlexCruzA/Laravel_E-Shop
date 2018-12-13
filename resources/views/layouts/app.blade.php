@@ -39,7 +39,6 @@
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                 <a class="nav-link" href="{{ route('articulos.index') }}">Lista</a>
                                 <a class="nav-link" href="{{ route('articulos.create') }}">Crear</a>
-                                <a class="nav-link" href="{{ route('users.index') }}">Listar Usuarios</a>
                             </div>
                         </li>
                         <li class="nav-item dropdown">
