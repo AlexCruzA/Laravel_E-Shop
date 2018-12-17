@@ -28,6 +28,7 @@ class CarritocompraController extends Controller
         return view('carritocompras.create');
     }
 
+
     /**
      * Store a newly created resource in storage.
      *

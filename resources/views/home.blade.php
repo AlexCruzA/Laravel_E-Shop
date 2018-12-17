@@ -13,7 +13,7 @@
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
                         </div>
-                    @endif
+                      @endif
                     <br>
                     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
                     <div class="progress">
@@ -31,4 +31,3 @@
     </script>
 </div>
 @endsection
-

@@ -1,7 +1,18 @@
 {!! Form::open(['route' => 'carritocompras.store', 'method' => 'POST']) !!}
 
 @extends('articulos.master')
+
+@php 
+  if( Auth::user())
+  {
+@endphp
+
 @section('content')
+@if (session('status'))
+      <div class="alert alert-success" role="alert">
+          {{ session('status') }}
+      </div>
+  @endif
   <div class="row">
     <div class="col-lg-12">
       <div class="pull-left">
@@ -50,3 +61,15 @@
   {!! Form::close() !!}
   <button type="submit" class="btn btn-success" name="button">Buy</button>
 @endsection
+
+@php  
+} 
+  else
+  {
+  @endphp
+    <script>
+        setTimeout(function(){location.href="{{ route('home') }}"} , 1);
+    </script>
+  @php 
+  }
+  @endphp

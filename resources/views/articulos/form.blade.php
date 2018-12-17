@@ -2,16 +2,6 @@
   use App\Categoria;
 
   $list = Categoria::all();
- // $catDesc = Categoria::pluck('descripcion');
-  // {{ Form::select('id_categoria', $catDesc, null, ['class'=>'form-control' , 'value'-])}}
-
-
-     /* $nombre_imagen=$_FILES['imagen']['name'];
-      $tipo_imagen=$_FILES['imagen']['type'];
-      $tamagno_imagen=$_FILES['imagen']['size'];
-
-      $carpeta_destino=$_SERVER['DOCUMENT_ROOT'].'\\imagenes\\';
-      move_uploaded_file($_FILES['imagen']['tmp_name'], $carpeta_destino.$nombre_imagen);*/
 ?>
 <div class="row">
   <div class="col-xs-12">

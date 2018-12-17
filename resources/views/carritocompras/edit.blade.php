@@ -1,4 +1,10 @@
 @extends('carritocompras.master')
+
+@php 
+  if( Auth::user())
+  {
+@endphp
+
 @section('content')
   <div class="row">
     <div class="col-lg-12">
@@ -24,3 +30,15 @@
   {!! Form::close() !!}
 
 @endsection
+
+@php  
+} 
+  else
+  {
+  @endphp
+    <script>
+        setTimeout(function(){location.href="{{ route('home') }}"} , 1);
+    </script>
+  @php 
+  }
+  @endphp

@@ -23,4 +23,3 @@ Route::resource('articulos', 'ArticuloController');
 Route::resource('categorias', 'CategoriaController');
 Route::resource('carritocompras', 'CarritocompraController');
 Route::resource('users', 'UserController');
-
