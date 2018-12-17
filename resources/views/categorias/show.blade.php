@@ -1,11 +1,9 @@
 @extends('Categorias.master')
-
-@php 
-  if( Auth::user())
-  {
+@php
+if( Auth::user())
+{
 @endphp
-
-@section('content')
+  @section('content')
   <div class="row">
     <div class="col-lg-12">
       <div class="pull-left">
@@ -13,7 +11,6 @@
       </div>
     </div>
   </div>
-
   <div class="row">
     <div class="col-xs-12">
       <div class="form-group">
@@ -22,17 +19,15 @@
       </div>
     </div>
   </div>
-  
-@endsection
-
-@php  
-} 
-  else
-  {
+  @endsection
+@php
+}
+else
+{
   @endphp
     <script>
-        setTimeout(function(){location.href="{{ route('home') }}"} , 1);
+     setTimeout(function(){location.href="{{ route('home') }}"} , 1);
     </script>
-  @php 
-  }
-  @endphp
+  @php
+}
+@endphp

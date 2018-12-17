@@ -9,8 +9,7 @@
     <a class="btn btn-xs btn-success" href="{{ route('categorias.index') }}">Back</a>
     @if( Auth::user()->rol == 'Administrador' )
       <button type="submit" class="btn btn-xs btn-primary" name="button">Submit</button>
-      @endif
-
+    @endif
     @if( Auth::user()->rol == 'Comprador' )
       <div class="alert alert-danger">
         <center><strong>Ups!</strong> No tienes acceso a esta función</center>

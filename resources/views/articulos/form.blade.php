@@ -1,7 +1,6 @@
 <?php
-  use App\Categoria;
-
-  $list = Categoria::all();
+use App\Categoria;
+$list = Categoria::all();
 ?>
 <div class="row">
   <div class="col-xs-12">
